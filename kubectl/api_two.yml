@@ -1,0 +1,37 @@
+{
+   "kind":"ReplicationController",
+   "apiVersion":"v1",
+   "metadata":{
+      "name":"api-two-controller",
+      "labels":{
+         "app":"api-two-controller"
+      }
+   },
+   "spec":{
+      "replicas":2,
+      "selector":{
+         "app":"api-two"
+      },
+      "template":{
+         "metadata":{
+            "labels":{
+               "app":"api-two"
+            }
+         },
+         "spec":{
+            "containers":[
+               {
+                  "name":"api-two",
+                  "image":"anilbb/api-two",
+                  "ports":[
+                     {
+                        "name":"spring-two-port",
+                        "containerPort":9119
+                     }
+                  ]
+               }
+            ]
+         }
+      }
+   }
+}

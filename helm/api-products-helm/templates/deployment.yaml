@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-products-deployment
+  labels:
+    app: api-products
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: api-products
+  template:
+    metadata:
+      labels:
+        app: api-products
+    spec:
+      containers:
+      - name: api-products
+        image: {{ .Values.image.repository }}
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - containerPort: 9119
+          name: spring-products-port

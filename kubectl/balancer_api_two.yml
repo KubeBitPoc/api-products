@@ -1,0 +1,18 @@
+{
+    "kind": "Service",
+    "apiVersion": "v1",
+    "metadata": {
+      "name": "api-service-two"
+    },
+    "spec": {
+      "ports": [{
+        "port": 4858,
+        "name": "balancer-two",
+        "targetPort": "spring-two-port"
+      }],
+      "selector": {
+        "app": "api-two"
+      },
+      "type": "LoadBalancer"
+    }
+  }
