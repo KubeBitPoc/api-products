@@ -20,4 +20,4 @@ spec:
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         ports:
         - containerPort: 9119
-          name: spring-products-port
+          name: spring-port

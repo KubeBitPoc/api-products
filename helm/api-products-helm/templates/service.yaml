@@ -6,6 +6,6 @@ spec:
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
-      targetPort: spring-products-port
+      targetPort: spring-port
   selector:
     app: api-products
